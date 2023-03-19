@@ -20,6 +20,22 @@ class Channel:
         self.__subscribers_count = self.__channel['items'][0]['statistics']['subscriberCount']
         self.__view_count = self.__channel['items'][0]['statistics']['viewCount']
 
+    def __str__(self):
+        return f"'{self.__title} ({self.__url})'"
+
+    def __add__(self, other):
+        self.other = other
+        return int(self.__subscribers_count) + int(other.__subscribers_count)
+
+    def __sub__(self, other):
+        self.other = other
+        return int(self.__subscribers_count) - int(other.__subscribers_count)
+
+    def __ge__(self, other):
+        self.other = other
+        if int(self.__subscribers_count) >= int(other.__subscribers_count):
+            return True
+
     def print_info(self) -> None:
         """Выводит в консоль информацию о канале."""
 
@@ -54,5 +70,9 @@ class Channel:
     @property
     def url(self):
         return self.__url
+
+    @property
+    def subscribers(self):
+        return self.__subscribers_count
 
 
