@@ -24,16 +24,13 @@ class Channel:
         return f"'{self.__title} ({self.__url})'"
 
     def __add__(self, other):
-        self.other = other
-        return int(self.__subscribers_count) + int(other.__subscribers_count)
+        return int(self.subscribers) + int(other.subscribers)
 
     def __sub__(self, other):
-        self.other = other
-        return int(self.__subscribers_count) - int(other.__subscribers_count)
+        return int(self.subscribers) - int(other.subscribers)
 
     def __ge__(self, other):
-        self.other = other
-        if int(self.__subscribers_count) >= int(other.__subscribers_count):
+        if int(self.subscribers) >= int(other.subscribers):
             return True
 
     def print_info(self) -> None:
