@@ -32,6 +32,26 @@ class Channel:
     def __ge__(self, other):
         if int(self.subscribers) >= int(other.subscribers):
             return True
+        else:
+            return False
+
+    def __lt__(self, other):
+        if int(self.subscribers) < int(other.subscribers):
+            return True
+        else:
+            return False
+
+    def __gt__(self, other):
+        if int(self.subscribers) > int(other.subscribers):
+            return True
+        else:
+            return False
+
+    def __le__(self, other):
+        if int(self.subscribers) <= int(other.subscribers):
+            return True
+        else:
+            return False
 
     def print_info(self) -> None:
         """Выводит в консоль информацию о канале."""
