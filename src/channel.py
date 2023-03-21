@@ -41,6 +41,12 @@ class Channel:
         else:
             return False
 
+    def __eq__(self, other):
+        if int(self.subscribers) == int(other.subscribers):
+            return True
+        else:
+            return False
+
     def __gt__(self, other):
         if int(self.subscribers) > int(other.subscribers):
             return True

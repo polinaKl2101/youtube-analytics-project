@@ -17,3 +17,4 @@ if __name__ == '__main__':
     print(vdud >= redactsiya)  # True
     print(vdud > redactsiya)
     print(vdud < vlad)
+    print(vdud == vdud)
